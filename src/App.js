@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+import Per from './Comp/Per';
+import React from 'react';
 import './App.css';
+class App extends React.Component{
+  constructor(){
+    super()
+    this.state={
+      show : false
+    }
+  }
+}
+handleShow =()=> this.setState({show : !this.state.show})
+  render(){
+    return(
+      <div>
+        
+        <button onClick={this.handleShow}>{this.state.show ? 'Hide' : 'Show'}</button>
+        {
+          this.state.show  &&  <Counter/> 
+        }
+        
+        </div>
+        )
+      }
+
+
+
+
+
+
+
+
+
+
 
 function App() {
+    const Fullname ="Riadh"
+    const Bio ="tired"
+    const profession ="Hata chy"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+    <Per Fullname={Fullname} Bio={Bio} profession={profession}>
+      </Per>
+    
+      </div>
+    )
+  }
+   
+ 
+
+
+  
+    
+ 
 
 export default App;
